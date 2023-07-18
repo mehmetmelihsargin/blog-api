@@ -1,10 +1,10 @@
 const express = require('express');
 const cors = require('cors')
 const app = express();
-app.use(cors())
 const path = require('path');
 const { getDevPost } = require('@arifszn/blog-js');
 
+app.use(cors())
 app.use(express.static('static'));
 
 app.get('/', (req, res) => {
