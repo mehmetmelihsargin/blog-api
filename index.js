@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const port = 3010;
 const path = require('path');
 const { getDevPost } = require('@arifszn/blog-js');
 
@@ -15,9 +14,8 @@ app.get('/', (req, res) => {
         console.log(error);
         res.status(500).send('Internal Server Error');
     });
-    res.send(data);
 });
-
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+const PORT = process.env.PORT || 3010
+app.listen(PORT, () => {
+    console.log(`Example app listening at http://localhost:${PORT}`);
 });
